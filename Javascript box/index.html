@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Add your CSS styles here if needed */
+    </style>
+</head>
+<body>
+    <div id="board"></div>
+    <div id="timer">Temps : 0s</div>
+    <div id="best-time">Meilleur temps : <span id="best-time-value">N/A</span></div>
+    <button onclick="startNewGame()">Nouvelle partie</button>
+    <script>
+        function shuffleChildren(parent) {
+            let children = parent.children;
+            let i = children.length, k, temp;
+            while (--i > 0) {
+                k = Math.floor(Math.random() * (i + 1));
+                temp = children[k];
+                children[k] = children[i];
+                parent.appendChild(temp);
+            }
+        }
+
+        function showReaction(type, clickedBox) {
+            clickedBox.classList.add(type);
+
+            if (type !== "success") {
+                setTimeout(function () {
+                    clickedBox.classList.remove(type);
+                }, 800);
+            }
+        }
+
+        let nb = 1;
+        let timerInterval;
+        let seconds = 0;
+        let currentGameScores = [];
+
+        const box = document.createElement("div");
+        box.classList.add("box");
+        const board = document.getElementById("board");
+
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                seconds++;
+                document.getElementById("timer").textContent = `Temps : ${seconds}s`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function saveScore(score) {
+            currentGameScores.push(score);
+        }
+
+        function displayBestTime() {
+            const bestTimeValue = sessionStorage.getItem("bestTime");
+
+            if (bestTimeValue !== null && !isNaN(bestTimeValue)) {
+                document.getElementById("best-time-value").textContent = `${bestTimeValue}s`;
+            }
+        }
+
+        function checkBestTime() {
+            saveScore(seconds);
+            displayBestTime();
+        }
+
+        function updateBestTime() {
+            const bestTimeValue = Math.min(...currentGameScores);
+            const currentBestTime = sessionStorage.getItem("bestTime");
+
+            if (!isNaN(bestTimeValue) && (currentBestTime === null || bestTimeValue < parseInt(currentBestTime, 10))) {
+                sessionStorage.setItem("bestTime", bestTimeValue);
+                displayBestTime();
+            }
+        }
+
+        function startNewGame() {
+            nb = 1;
+            clearInterval(timerInterval);
+            document.getElementById("timer").textContent = "Temps : 0s";
+            seconds = 0;
+
+            const existingBoxes = document.querySelectorAll(".box");
+            existingBoxes.forEach(box => box.parentNode.removeChild(box));
+
+            const boxCount = prompt("Combien de boîtes veux-tu voir sur la page ?");
+            if (!isNaN(boxCount) && boxCount > 0) {
+                currentGameScores = [];
+
+                for (let i = 1; i <= boxCount; i++) {
+                    const newbox = box.cloneNode();
+                    newbox.innerText = i;
+                    board.appendChild(newbox);
+
+                    newbox.addEventListener("click", function () {
+                        handleBoxClick(newbox, i);
+                    });
+                }
+
+                shuffleChildren(board);
+                startTimer();
+            } else {
+                alert("Veuillez entrer un nombre valide de boîtes.");
+            }
+        }
+
+        function handleBoxClick(clickedBox, boxNumber) {
+            clickedBox.classList.add("box-clicked");
+
+            if (boxNumber === nb) {
+                if (nb === board.children.length) {
+                    board.querySelectorAll(".box").forEach(function (box) {
+                        showReaction("success", box);
+                    });
+                    shuffleChildren(board);
+                    nb = 1;
+                    stopTimer();
+                    checkBestTime();
+                    updateBestTime();
+                } else {
+                    nb++;
+                }
+            } else if (boxNumber > nb) {
+                showReaction("error", clickedBox);
+                nb = 1;
+                board.querySelectorAll(".box-clicked").forEach(function (validBox) {
+                    validBox.classList.remove("box-clicked");
+                });
+                setTimeout(function () {
+                    shuffleChildren(board);
+                }, 800);
+            } else {
+                showReaction("notice", clickedBox);
+            }
+
+            shuffleChildren(board);
+        }
+
+        // Display the best time when the page loads.
+        displayBestTime();
+        
+        // Start the initial game.
+        startNewGame();
+    </script>
+</body>
+</html>
