@@ -1,0 +1,194 @@
+/***************************general********************/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+#container{
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+}
+/***************************Header********************/
+.top-page{
+    display: flex;
+    text-align: center;
+}
+.logo-nvidia-header{ /*logo top lef*/
+    width: 192px;
+    height:112;
+}
+.imgcontainer{
+    height: 400px;
+    overflow: hidden;
+}
+.content{
+    position: absolute;
+    display: flex;
+    background-color: #51A00E;
+    color: white;
+    background: rgb(93, 172, 29); /* Fallback color */
+    background: rgba(39, 173, 21, 0.5); /* Black background with 0.5 opacity */
+    width: 120%;
+    margin-top: -310px;
+    font-size: 50px;
+}
+.content>button{
+    justify-content: space-between;
+    background-color: #79E71B;
+    border-radius: 10px;
+    color: white;
+    font-size: 25px;
+}
+.RTX2080{
+    width: 100%;
+    vertical-align: bottom;
+    object-fit: cover;
+    margin-top: -90px;
+}
+figure{
+    display: flex;
+    flex-flow: column;
+}
+.nvidianame{
+    text-align:center;
+    font-weight: bold;
+    font-size: 2em;
+}
+/*navbar*/
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+li{
+    list-style: none;
+    display: list-item;
+    margin:  0 30px;
+}
+li>a{
+    color: black;
+    font-size: 1.5em;
+}
+
+/*******************************main*********************/
+main{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 25px;
+    
+    position: relative;
+}
+.border-container {
+    position: relative;
+    width: 100%; /* Ajustez la largeur de votre bordure */
+    height: 20px; /* Ajustez la hauteur de votre bordure */
+    background-color: #51A00E; /* Couleur de fond pour la "bordure" */
+  }
+  
+  .arrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(150%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0;
+    border-color:  #51A00E transparent transparent; /* Utilisez la même couleur que la bordure */
+    margin: -20px
+  }
+
+.nvidia-main-logo{
+    border: 2px solid black;
+    border-radius: 5%;
+
+}
+.logo-article{
+    display: flex;
+    align-items: center;
+}
+h1{
+    font-size: 30px;
+}
+Article {
+    width: 60%;
+    margin: 5px;
+}
+Aside{
+    background-color: #51A00E;
+    text-align: center;
+    width: 40%;
+    color: white;
+    display: block;
+}
+Aside>figure{
+    display: block;
+    flex-direction: column;
+    width: 100%;
+}
+.logo-aside{
+    width: 30%;
+}
+.logo-aside>i{
+    width: 100%;
+}
+
+
+aside>p{
+    font-size: 16px;
+    display: block;
+    margin-bottom: 150px;
+    width: 100%;
+}
+
+
+
+/*******************************Footer*********************/
+.footer-div{
+    display: flex;
+}
+
+/****size div footer-newleter***/
+.footer-newletter{
+    width: 40%;
+}
+.elements-newletter{
+    display: block;
+}
+/****size div footer-galerie ***/
+.footer-galerie{
+    width: 30%;
+}
+.logo-galerie{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+/****size div footer-partenaires***/
+.footer-partenaires{
+    width: 20%;
+}
+.logo-partenaires{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-box {
+    border: 2px solid black;
+    width: 20%;
+    height: 35px;
+}
+.register-btn{
+    background-color: #51A00E;
+    color: white;
+    border: none;
+    width: 10%;
+    height: 35px;
+}

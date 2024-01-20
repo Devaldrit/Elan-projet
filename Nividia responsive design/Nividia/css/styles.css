@@ -1,0 +1,447 @@
+/***************************general********************/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/***************************Header********************/
+.imgcontainer {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    background-color: #51A00E;
+    color: white;
+    background: rgb(93, 172, 29);
+    background: rgba(39, 173, 21, 0.5);
+    width: 120%;
+    bottom: 0;
+    font-size: 50px;
+    width: 100%;
+}
+
+.content>p {
+    margin-left: 5px;
+
+}
+
+.content>button {
+    display: flex;
+    background-color: #79E71B;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.content-découvrir {
+    margin-top: 7px;
+}
+
+.RTX2080 {
+    width: 100%;
+    vertical-align: bottom;
+    object-fit: cover;
+    margin-top: -90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header {
+    background-color: #51A00E;
+    display: flex;
+    width: 100%;
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    font-size: 2em;
+}
+header>figure{
+    width: 30%;
+}
+
+figure {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.nvidianame {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+li>a {
+    color: black;
+    font-size: 1em;
+}
+
+.header-figure {
+    width: 30%;
+}
+
+.header-nav {
+    width: 70%;
+}
+
+/*******************************main*********************/
+main {
+    display: block
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 25px;
+    position: relative;
+}
+
+.border-container {
+    position: relative;
+    width: 100%;
+    /* Ajustez la largeur de votre bordure */
+    height: 20px;
+    /* Ajustez la hauteur de votre bordure */
+    background-color: #51A00E;
+    /* Couleur de fond pour la "bordure" */
+}
+
+.arrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(150%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0;
+    border-color: #51A00E transparent transparent;
+    /* Utilisez la même couleur que la bordure */
+    margin: -20px;
+}
+
+.nvidia-main-logo {
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.logo-article {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1,5;
+    margin-left: 5px;
+}
+
+Article {
+    width: 100%;
+    margin: 5px;
+    font-size: 2em;
+}
+
+/****ASIDE*****/
+aside {
+    background-color: #51A00E;
+    text-align: center;
+    width: 100%;
+    color: white;
+    display: block;
+    justify-content: space-between;
+    font-size: 2em;
+    height: 600px;
+}
+
+.img-aside {
+    align-self: center;
+    width: 20%;
+}
+
+.paragraph-aside {
+    margin-bottom: 30px;
+}
+
+.icon-div>i {
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*******************************Footer*********************/
+footer {
+    display: block;
+    margin-left: 5px;
+    width: 100%;
+    height: 150px;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+/****size div footer-newleter***/
+
+.elements-newletter {
+    display: block;
+}
+
+/****size div footer-galerie ***/
+.logo-galerie {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+/****size div footer-partenaires***/
+.logo-partenaires {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-box {
+    border: 2px solid black;
+    height: 35px;
+}
+
+.register-btn {
+    background-color: #51A00E;
+    color: white;
+    border: none;
+    width: 10%;
+    height: 35px;
+}
+
+/***************************Navbar********************/
+
+/* Navbar styles */
+.navbar {
+    background-color: #51A00E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-branding {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease-out;
+}
+
+.nav-item a:hover {
+    color: #51A00E;
+}
+
+/* Hamburger styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 320px) {
+    /******header*******/
+    .RTX2080{
+        height: 400px;
+        margin-top: -1px;
+    }
+    .content{
+        font-size: 15px;
+    }
+    .button{
+        font-size: 15px;
+    }
+    /******main*******/
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+    article{
+        width: 100%;
+        font-size: 20px;
+    }
+    article>p{
+        padding: 5px;
+        text-align: justify;
+    }
+    aside{
+        width: 100%;
+        font-size: 20px;
+        height: 400px;
+    }
+    aside>p{
+        text-align: justify;
+    }
+    .logo-article{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    img.nvidia-main-logo {
+        align-self: center;
+    }
+    /******footer*****/
+    .register-btn{
+        width: 100%;
+    }
+    .logo-galerie {
+        margin-right: 20px;
+    }
+    .text-box{
+        width: 100%;
+    }
+    /******navbar hamburger****/
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #51A00E;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Media query for tablet responsiveness */
+@media (min-width: 321px) and (max-width: 1023px) {
+    /***header****/
+    .content>p {
+        font-size: 0.50em;
+        padding-top: 10px;
+    }
+    /****main*****/
+    Article {
+        width: 100%;
+        margin: 5px;
+    }
+    Aside{
+        width: 100%;
+    }
+    .logo-article{
+        padding-right: 50px;
+    }
+    /****navbar hamburger****/
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #51A00E;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .RTX2080 {
+        width: 100%;
+        vertical-align: bottom;
+        object-fit: cover;
+        margin-top: -48px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+    .navbar {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
