@@ -1,0 +1,108 @@
+/***************************general********************/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    background-color: yellow;
+}
+#container{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.blue{
+    background-color: rgb(38, 87, 247);
+    color: white;
+    text-align: center;
+}
+.darkBlue{
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+a{
+    color: white;
+}
+li{
+    list-style: none;
+}
+article>p {
+color: black;
+margin-top: 10px;
+}
+
+.blue>p {
+    color: white;
+    margin-top: 20px;
+    text-align: justify;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*******************header*********************************/
+.imgContainer{
+    height: 400px;
+    overflow: hidden;        /*Tout ce qui dépasse est caché*/
+    border-top: 2px solid white
+}
+.FamilleSimpson{
+    width: 100%;
+    vertical-align: bottom;
+    object-fit: cover; /* fait l'effet crop de l'image*/
+    margin-top: -90px;
+}
+/*******************************main*********************/
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+h1{
+    color: rgb(110, 110, 3);
+    font-size: 30px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid white;
+    border-bottom-style:dotted ;
+}
+article{
+width: 60%;
+text-align: justify;
+justify-content: center;
+}
+aside{
+width: 30%;
+}
+
+.matt{
+    width: 60%;
+    margin-top: 5px;
+    border: 2px solid white
+}
+li{
+    margin: 10px;
+}
+.Movie{
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+}
+.Moviecontainer{
+    display: flex;
+    justify-content: space-between;
+}
+.Italique{
+    font-style: italic ;
+}
